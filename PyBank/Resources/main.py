@@ -3,7 +3,7 @@ import csv
 
 budget_data = []
 
-csv_path = os.path.join("Resources","budget_data.csv")
+csv_path = os.path.join("..","python-challenge","PyBank","Resources","budget_data.csv")
 #open csv file
 with open(csv_path) as csvfile:
     budget_data_read = csv.reader(csvfile, delimiter=",")
@@ -56,7 +56,7 @@ output_data = (
       )
 print(output_data)
 #export output data in a text file
-output_path = os.path.join("Resources", "output.txt")
+output_path = os.path.join("..","python-challenge","PyBank","Resources", "output.txt")
 with open(output_path, 'w') as file:
     file.write(output_data)
 

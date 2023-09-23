@@ -2,7 +2,7 @@ import os
 import csv
 
 election_data = []
-csv_path = os.path.join("Resources","election_data.csv")
+csv_path = os.path.join("..","python-challenge","PyPoll","Resources","election_data.csv")
 
 with open(csv_path) as csvfile:
     election_data_read = csv.reader(csvfile, delimiter=",")
@@ -33,7 +33,7 @@ with open(csv_path) as csvfile:
     max_votes = 0
     for candidate in Candidates:
         percent_share = (Candidate_Dict[candidate]/total_votes) * 100
-        results += (f"{candidate}: {Candidate_Dict[candidate]} ({percent_share}%)\n\n" )
+        results += (f"{candidate}: {Candidate_Dict[candidate]} ({round(percent_share,2)}%)\n\n" )
 
         if Candidate_Dict[candidate] > max_votes:
             max_votes = Candidate_Dict[candidate]
@@ -53,6 +53,6 @@ output = (
 
 print(output)
 
-output_path = os.path.join("Resources", "output.txt")
+output_path = os.path.join("..","python-challenge","PyPoll","Resources", "output.txt")
 with open(output_path, 'w') as file:
     file.write(output)
